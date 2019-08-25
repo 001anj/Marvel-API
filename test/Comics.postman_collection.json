@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "b286f3e4-c43d-4615-9766-3edf4bc807af",
-		"name": "Comics",
+		"name": "comics",
 		"description": "verify the status code is equal to 200 and that the response payload matches the Comic type definition (first level only, not going deeper into CharacterList or other types, only confirming that it is a list with items)\n\nUrl - \ncall - /v1/public/comics/27649",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
