@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "68d8155d-e91e-47f8-9a7a-be585c12ee95",
-		"name": "Characters",
+		"name": "characters",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -90,6 +90,28 @@
 				"description": "Verify\r\n1. Name of this character is \"Spider-Man\r\n(Ultimate)\".\r\n2. The last modification was later than January 2014. \r\n3. The provided thumbnail is a valid image url"
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b26a7a8c-0bb7-483a-9a7d-644ad5168705",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2fb20cc2-13ae-4b46-8fac-46cc67859206",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
