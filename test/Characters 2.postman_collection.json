@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "697a1d4c-cd30-477a-abbf-5767668437bb",
-		"name": "Characters 2",
+		"name": "characters 2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -60,6 +60,28 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "615f585b-c3aa-42cb-a09b-9327c4aa47a6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3347f00d-9a7e-42a9-9e80-fe96941ec262",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
