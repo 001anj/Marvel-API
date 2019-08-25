@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "a3259842-9a61-4aef-88b9-9e0c97a22db9",
-		"name": "Series",
+		"name": "series",
 		"description": "Test for all authorisation error codes\n\nUrl - https://gateway.marvel.com\nCall - /v1/public/series",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
