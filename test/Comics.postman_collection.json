@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "b286f3e4-c43d-4615-9766-3edf4bc807af",
+		"name": "Comics",
+		"description": "verify the status code is equal to 200 and that the response payload matches the Comic type definition (first level only, not going deeper into CharacterList or other types, only confirming that it is a list with items)\n\nUrl - \ncall - /v1/public/comics/27649",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET 200 - Perfect response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7da9f5f9-4bf9-45e2-8a93-094fdc21dbe3",
+						"exec": [
+							"pm.test(\"Perfect status code\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Hulk\");",
+							"});",
+							"pm.test(\"Verify name of character is as expected\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var result =  jsonData.data.results[0].name;",
+							"    pm.expect().to.eql(\"Spider-Man (Ultimate)\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gateway.marvel.com/v1/public/comics/27649?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+					"protocol": "http",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"comics",
+						"27649"
+					],
+					"query": [
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "09faf885a718d9d16aca019869cb082c"
+						},
+						{
+							"key": "hash",
+							"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "783492e9-3547-4570-8a62-bb886c3d9103",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ccf3a120-3ccf-48da-8ccd-96ee84149dd4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
