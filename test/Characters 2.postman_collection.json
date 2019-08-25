@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "697a1d4c-cd30-477a-abbf-5767668437bb",
+		"name": "Characters 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - 404 ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f679d9d5-69e7-48a1-b48c-5e31dfdc34da",
+						"exec": [
+							"pm.test(\"Verify endpoint doesn't return expected character\", function () {",
+							"    var result =  pm.response.json();",
+							"    pm.expect(result).not.eql(\"Spider-Man (Ultimate)\");",
+							"});",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gateway.marvel.com/v1/public/characters/1011010010101?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+					"protocol": "http",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"characters",
+						"1011010010101"
+					],
+					"query": [
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "09faf885a718d9d16aca019869cb082c"
+						},
+						{
+							"key": "hash",
+							"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
