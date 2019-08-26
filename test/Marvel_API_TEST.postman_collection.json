@@ -1,0 +1,951 @@
+{
+	"info": {
+		"_postman_id": "d16d9964-cb76-4702-9227-d28f88211ac5",
+		"name": "Marvel_API_TEST",
+		"description": "Collection of API's for test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "series",
+			"item": [
+				{
+					"name": "GET 409 - Missing API key",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f29c28d0-e0d1-4958-9a90-d9228ddd2918",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"You must provide a user key\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c",
+									"disabled": true
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						},
+						"description": "API key is missing"
+					},
+					"response": []
+				},
+				{
+					"name": "GET 409 - Missing time stamp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b858149-4b04-4dfa-974b-9ccc7431763e",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"You must provide a timestamp\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 409 - Missing Hash",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "998be116-67b1-4a49-a48c-ec232536899c",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"You must provide a hash\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&apikey=09faf885a718d9d16aca019869cb082c",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 200 - Perfect response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06db96ad-3544-4ae9-882b-59c0d3a21939",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Ok\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 401 - Invalid referer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5bf31ad6-80af-4df2-8fb6-3198d7d013cd",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"The passed API key is invalid\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&apikey=09faf885a718d9d16aca019869cb082&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 401 - Invalid Hash",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "37a5fcc0-51d1-4a2c-8637-6ad33c0a80ee",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"That hash, timestamp and key combination is invalid\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 405 - Method not allowed (POST)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ba03fb3-fd38-4702-8c81-8ef1d490ee93",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"POST is not allowed\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 405 - Method not allowed (PATCH)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "11bbbc22-2c2e-44ad-9b82-df0425b6fe72",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"PATCH is not allowed\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 405 - Method not allowed (DELETE)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "11bbbc22-2c2e-44ad-9b82-df0425b6fe72",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"DELETE is not allowed\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/series?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"series"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "characters",
+			"item": [
+				{
+					"name": "GET - 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6cda4b46-bcdc-4b17-a5cb-8feacc20e003",
+								"exec": [
+									"pm.test(\"\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var code =  jsonData.code;",
+									"    pm.expect(code).to.eql(200); ",
+									"});",
+									"",
+									"pm.test(\"Verify name of character is as expected\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var result =  jsonData.data.results[0].name;",
+									"    pm.expect(result).to.eql(\"Spider-Man (Ultimate)\");",
+									"});",
+									"",
+									"pm.test(\"Check modification done after 2014-01-01\", () => {",
+									"var jsonData = pm.response.json();",
+									"   let date, ",
+									"   isoFormatDate,",
+									"   a = new Date('2014-01-01').getTime();",
+									"",
+									"   for (i = 0; i < jsonData.data.results.name; i++) {",
+									"",
+									"      date = jsonData.name[i].modified;",
+									"",
+									"      isoFormatDate = new Date(Date.parse(date)).getTime(); // Converting to integer from date format",
+									"",
+									"      pm.expect(isoFormatDate).to.be.above(a);",
+									"   }",
+									"});",
+									"",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var thumbnail =  jsonData.data.results[0].thumbnail;",
+									"   pm.expect(thumbnail.extension).to.eql(\"jpg\"); ",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1011010?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1011010"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						},
+						"description": "Verify\r\n1. Name of this character is \"Spider-Man\r\n(Ultimate)\".\r\n2. The last modification was later than January 2014. \r\n3. The provided thumbnail is a valid image url"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify name of character as expected",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "16492ef5-8f7d-4ec0-b274-c2b6f344588c",
+								"exec": [
+									"pm.test(\"Verify name of character is as expected\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var result =  jsonData.data.results[0].name;",
+									"    pm.expect(result).to.eql(\"Spider-Man (Ultimate)\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1011010?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1011010"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ensure that modification is done after 2014-01-01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "69e17cd2-7457-4d2b-991f-27d4414f202d",
+								"exec": [
+									"pm.test(\"Check modification done after 2014-01-01\", () => {",
+									"var jsonData = pm.response.json();",
+									"   let date, ",
+									"   isoFormatDate,",
+									"   a = new Date('2014-01-01').getTime();",
+									"",
+									"   for (i = 0; i < jsonData.data.results.name; i++) {",
+									"",
+									"      date = jsonData.name[i].modified;",
+									"",
+									"      isoFormatDate = new Date(Date.parse(date)).getTime(); // Converting to integer from date format",
+									"",
+									"      pm.expect(isoFormatDate).to.be.above(a);",
+									"   }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1011010?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1011010"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provided thumbnail is a valid image url",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "573ab89f-d91b-450b-aecb-486f5e01cfb0",
+								"exec": [
+									"pm.test(\"Provided thumbnail is a valid image url\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var thumbnail =  jsonData.data.results[0].thumbnail;",
+									"   pm.expect(thumbnail.extension).to.eql(\"jpg\"); ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1011010?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1011010"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comics",
+			"item": [
+				{
+					"name": "GET 200 - Perfect response",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7da9f5f9-4bf9-45e2-8a93-094fdc21dbe3",
+								"exec": [
+									"pm.test(\"Perfect status code\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/comics/27649?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"comics",
+								"27649"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payload matches the comic type definition",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "91a3dd8e-e9a7-4c18-b450-e2cd7bdacd1d",
+								"exec": [
+									"pm.test(\"\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var result =  jsonData.data.results;",
+									"    pm.expect(result).to.be.an('array').but.not.an('object');",
+									"    pm.expect(result.length).to.be.above(0);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/comics/27649?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"comics",
+								"27649"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "characterHulk",
+			"item": [
+				{
+					"name": "GET - 404 ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f679d9d5-69e7-48a1-b48c-5e31dfdc34da",
+								"exec": [
+									"",
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1011010010101?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1011010010101"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check whether endpoint doesn't return a character",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5b8b922b-4200-4e79-82df-553b3e865111",
+								"exec": [
+									"pm.test(\"Verify endpoint doesn't return expected character\", function () {",
+									"    var result =  pm.response.json();",
+									"    pm.expect(result).not.eql(\"Spider-Man (Ultimate)\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1011010010101?ts=1&apikey=09faf885a718d9d16aca019869cb082c&hash=f22b0ecadc1f5bdf36ccfbb3aea0ff60",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1011010010101"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1"
+								},
+								{
+									"key": "apikey",
+									"value": "09faf885a718d9d16aca019869cb082c"
+								},
+								{
+									"key": "hash",
+									"value": "f22b0ecadc1f5bdf36ccfbb3aea0ff60"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
