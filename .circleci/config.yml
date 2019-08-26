@@ -7,5 +7,5 @@ jobs:
     steps:
       - checkout
       - newman/newman-run:
-          collection: ./test/Marvel_API_TEST.postman_collection.json
+          collection: ./collection.json
          
