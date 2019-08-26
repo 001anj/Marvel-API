@@ -1,32 +1,11 @@
 version: 2.1
 orbs:
-  newman: postman/newman@1.0.0
+  newman: postman/newman@0.0.2
 jobs:
-  newman-collection-run:
+  build:
     executor: newman/postman-newman-docker
     steps:
       - checkout
       - newman/newman-run:
-          collection: ./collection.json
-          
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-
-      - run: yarn install 
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run: yarn test
-
-      - store_test_results:
-          path: test-results
-
+          collection: ./test/Marvel_API_TEST.postman_collection.json
+         
