@@ -1,13 +1,17 @@
 version: 2.1
 orbs:
-  newman: postman/newman@0.0.2
+  newman: postman/newman@1.0.0
 jobs:
   newman-collection-run:
     executor: newman/postman-newman-docker
     steps:
       - checkout
       - newman/newman-run:
-          collection: /test/collection.json
+          collection: ./collection.json
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.15.3-browsers
 
     working_directory: ~/repo
 
@@ -30,4 +34,3 @@ jobs:
       - store_test_results:
           path: test-results
 
-© 2019 GitHub, Inc.
