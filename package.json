@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "newman run"
+    "test": "newman run test/Marvel_API_TEST.postman_collection.json"
   },
   "repository": {
     "type": "git",
