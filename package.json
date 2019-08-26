@@ -1,0 +1,30 @@
+{
+  "name": "marvel-api",
+  "version": "1.0.0",
+  "description": "API test cases",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "newman": "^4.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "newman run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/001anj/Marvel-API.git"
+  },
+  "keywords": [
+    "\"Postman\"",
+    "\"newman\""
+  ],
+  "author": "Anjo Mathew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/001anj/Marvel-API/issues"
+  },
+  "homepage": "https://github.com/001anj/Marvel-API#readme"
+}
