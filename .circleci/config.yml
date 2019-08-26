@@ -8,11 +8,7 @@ jobs:
       - checkout
       - newman/newman-run:
           collection: ./collection.json
-jobs:
-  build:
-    docker:
-      - image: circleci/node:10.15.3-browsers
-
+          
     working_directory: ~/repo
 
     steps:
